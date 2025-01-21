@@ -1,17 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Calculator</title>
 </head>
-<body>
-    <div class="main">
 
+<body class="flex flex-col justify-center items-center p-4 min-h-screen">
+    <div class="main m-0 flex flex-col justify-center items-center w-96 py-6 px-4">
+        <div class="display py-4">
+            <input type="text" id="result" />
+        </div>
+        <div class="buttons grid grid-cols-4 gap-4">
+                <input type="button" value="AC" />
+                <input type="button" value="DEL" />
+                <input type="button" value="%" />
+                <input type="button" value="/" />
+
+                <input type="button" value="7" />
+                <input type="button" value="8" />
+                <input type="button" value="9" />
+                <input type="button" value="x" />
+
+                <input type="button" value="4" />
+                <input type="button" value="5" />
+                <input type="button" value="6" />
+                <input type="button" value="-" />
+
+                <input type="button" value="1" />
+                <input type="button" value="2" />
+                <input type="button" value="3" />
+                <input type="button" value="+" />
+
+                <input type="button" value="." />
+                <input type="button" value="0" />
+                <input type="button" value="=" />
+        </div>
     </div>
-    <div class="footer">
-        
-    </div>
+    <div class="footer text-center">Copyright ©️ 2025 Arshqiii</div>
+    <script type="text/javascript" src="index.js"></script>
 </body>
+
 </html>
