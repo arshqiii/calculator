@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,40 +7,39 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body class="flex flex-col justify-center items-center p-4 min-h-screen bg-sky-100">
     <div class="main bg-orange-100 rounded-md m-0 flex flex-col gap-5 justify-center items-center py-6 px-4 outline outline-teal-800">
-        <div class="display px-3 py-2 text-lg">
-            <input class="rounded-md w-full py-3" readonly ="text" id="result" />
+        <div class="display flex flex-col rounded-md bg-white px-3 py-2 w-full text-lg justify-end items-end">
+            <input class="rounded-md py-3 px-5 w-3/4" readonly type="text" id="result" />
+            <input class="rounded-md py-3 px-5" readonly type ="text" id="result" />
         </div>
-        <div class="buttons grid grid-cols-4 gap-4">
-                <input type="button" class="rounded-md bg-lime-500 outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-lime-700" value="AC" />
-                <input type="button" class="rounded-md bg-red-500 outline outline-red-800 px-2 py-1 shadow-lg hover:bg-red-700" value="DEL" />
-                <input type="button" class="rounded-md bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="%" />
-                <input type="button" class="rounded-md bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="/" />
+        <div class="buttons text-xl grid grid-cols-4 gap-4">
+                <input type="button" class="rounded-md w-14 h-14 bg-lime-500 outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-lime-700" value="AC" />
+                <input type="button" class="rounded-md w-14 h-14 bg-red-500 outline outline-red-800 px-2 py-1 shadow-lg hover:bg-red-700" value="DEL" />
+                <input type="button" class="rounded-md w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="%" />
+                <input type="button" class="rounded-md w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="/" />
 
-                <input type="button" class="rounded bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="7" />
-                <input type="button" class="rounded bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="8" />
-                <input type="button" class="rounded bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="9" />
-                <input type="button" class="rounded-md bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="x" />
+                <input type="button" class="rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="7" />
+                <input type="button" class="rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="8" />
+                <input type="button" class="rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="9" />
+                <input type="button" class="rounded-md w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="x" />
 
-                <input type="button" class="rounded bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="4" />
-                <input type="button" class="rounded bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="5" />
-                <input type="button" class="rounded bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="6" />
-                <input type="button" class="rounded-md bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="-" />
+                <input type="button" class="rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="4" />
+                <input type="button" class="rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="5" />
+                <input type="button" class="rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="6" />
+                <input type="button" class="rounded-md w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="-" />
 
-                <input type="button" class="rounded bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="1" />
-                <input type="button" class="rounded bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="2" />
-                <input type="button" class="rounded bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="3" />
-                <input type="button" class="rounded-md bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="+" />
+                <input type="button" class="rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="1" />
+                <input type="button" class="rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="2" />
+                <input type="button" class="rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="3" />
+                <input type="button" class="rounded-md w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="+" />
 
-                <input type="button" class="rounded-md bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="." />
-                <input type="button" class="rounded bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="0" />
-                <input type="button" class="col-span-2 rounded-md bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="=" />
+                <input type="button" class="rounded-md w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="." />
+                <input type="button" class="rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="0" />
+                <input type="button" class="col-span-2 rounded-md h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="=" />
         </div>
     </div>
-    <div class="footer">Copyright ©️ 2025 Arshqiii</div>
+    <div class="footer py-5">Copyright ©️ 2025 Arshqiii</div>
     <script type="text/javascript" src="index.js"></script>
 </body>
-
 </html>
