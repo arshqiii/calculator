@@ -1,8 +1,8 @@
 const clear = document.querySelector("#clearBtn")
 const equal = document.querySelector("#equalBtn")
 const point = document.querySelector("#pointBtn")
-const display = document.querySelector(".cur-display")
-const past_display = document.querySelector(".past-display")
+const curDisplay = document.querySelector(".cur-display")
+const prevDisplay = document.querySelector(".prev-display")
 
 let result = 0
 
