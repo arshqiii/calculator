@@ -2,16 +2,13 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    background-color: #faf4ef;
     min-height: 100vh;
     align-items: center;
     font-family: 'Arial', sans-serif;
     color: #333;
 }
 
-
 .footer {
-    margin-top: auto;
     padding: 1rem;
     text-align: center;
     font-size: 0.9rem;

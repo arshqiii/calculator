@@ -5,37 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Calculator</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="flex flex-col justify-center items-center p-4 min-h-screen bg-sky-100">
     <div class="main bg-orange-100 rounded-md m-0 flex flex-col gap-5 justify-center items-center py-6 px-4 outline outline-teal-800">
-        <div class="display flex flex-col rounded-md bg-white px-3 py-2 w-full text-lg justify-end items-end">
-            <div class="prev-display min-h-8 text-right w-3/4 text-xl" id="result"></div>
-            <div class="cur-display min-h-16 text-right w-full text-5xl">0</div>
+        <div class="display flex flex-col rounded-md bg-white px-3 py-2 w-full text-lg">
+            <div class="prev-display min-h-8 w-full text-right text-xl break-all" id="result"></div>
+            <div class="cur-display min-h-16 w-full text-right text-5xl break-all">0</div>
         </div>
         <div class="buttons text-xl grid grid-cols-4 gap-4">
                 <input type="button" id="clearBtn" class="rounded-md w-14 h-14 bg-lime-500 outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-lime-700" value="AC" />
                 <input type="button" id="deleteBtn" class="rounded-md w-14 h-14 bg-red-500 outline outline-red-800 px-2 py-1 shadow-lg hover:bg-red-700" value="DEL" />
-                <input type="button" id="operator" class="rounded-md w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="%" />
-                <input type="button" id="operator" class="rounded-md w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="/" />
+                <input type="button" class="operator rounded-md w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="%" />
+                <input type="button" class="operator rounded-md w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="/" />
 
-                <input type="button" id="numberBtn" class="rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="7" />
-                <input type="button" id="numberBtn" class="rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="8" />
-                <input type="button" id="numberBtn" class="rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="9" />
-                <input type="button" id="operator" class="rounded-md w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="x" />
+                <input type="button" class="numberBtn rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="7" />
+                <input type="button" class="numberBtn rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="8" />
+                <input type="button" class="numberBtn rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="9" />
+                <input type="button" class="operator rounded-md w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="x" />
 
-                <input type="button" id="numberBtn" class="rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="4" />
-                <input type="button" id="numberBtn" class="rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="5" />
-                <input type="button" id="numberBtn" class="rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="6" />
-                <input type="button" id="operator" class="rounded-md w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="-" />
+                <input type="button" class="numberBtn rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="4" />
+                <input type="button" class="numberBtn rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="5" />
+                <input type="button" class="numberBtn rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="6" />
+                <input type="button" class="operator rounded-md w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="-" />
 
-                <input type="button" id="numberBtn" class="rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="1" />
-                <input type="button" id="numberBtn" class="rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="2" />
-                <input type="button" id="numberBtn" class="rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="3" />
-                <input type="button" id="operator" class="rounded-md w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="+" />
+                <input type="button" class="numberBtn rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="1" />
+                <input type="button" class="numberBtn rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="2" />
+                <input type="button" class="numberBtn rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="3" />
+                <input type="button" class="operator rounded-md w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="+" />
 
                 <input type="button" id="pointBtn" class="rounded-md w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="." />
-                <input type="button" id="numberBtn" class="rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="0" />
+                <input type="button" class="numberBtn rounded w-14 h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="0" />
                 <input type="button" id="equalBtn" class="col-span-2 rounded-md h-14 bg-white outline outline-teal-800 px-2 py-1 shadow-lg hover:bg-neutral-200" value="=" />
         </div>
     </div>
