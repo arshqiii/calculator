@@ -14,12 +14,12 @@ const prevDisplay = document.querySelector(".prev-display");
 const numberBtn = document.querySelectorAll(".numberBtn");
 const operatorBtn = document.querySelectorAll(".operator");
 
+clear.addEventListener("click", clearDisplay);
+delBtn.addEventListener("click", deleteNumber);
 numberBtn.forEach((button) =>
     button.addEventListener("click", () => displayNumber(button.value))
 );
 
-clear.addEventListener("click", clearDisplay);
-delBtn.addEventListener("click", deleteNumber);
 
 function displayNumber(num) {
     if (curDisplay.textContent === "0" || shouldReset) {
@@ -44,10 +44,10 @@ function clearDisplay() {
     operator = null;
 }
 
-function deleteNumber(){
-    if (showingResult) return
-    let num = curDisplay.textContent
-    curDisplay.textContent = num.slice(0,-1)
+function deleteNumber() {
+    let num = curDisplay.textContent;
+    if (showingResult || num === '0') return;
+    curDisplay.textContent = num.slice(0, -1);
 }
 
 const add = function (a, b) {
@@ -65,3 +65,27 @@ const multiply = function (a, b) {
 const divide = function (a, b) {
     return a / b;
 };
+
+const mod = function (a, b) {
+    return a % b;
+};
+
+function calculate(sign, num1, num2) {
+    num1 = Number(num1);
+    num2 = Number(num2);
+    if (sign == "+") {
+        return add(num1, num2);
+    }
+    if (sign == "-") {
+        return subtract(num1, num2);
+    }
+    if (sign == "x") {
+        return multiply(num1, num2);
+    }
+    if (sign == "/") {
+        return divide(num1, num2);
+    }
+    if (sign == "%") {
+        return mod(num1, num2);
+    }
+}
