@@ -17,26 +17,28 @@ const operatorBtn = document.querySelectorAll(".operator");
 
 clear.addEventListener("click", clearDisplay);
 delBtn.addEventListener("click", deleteNumber);
-point.addEventListener('click', placeDot)
+point.addEventListener("click", placeDot);
+equal.addEventListener("click", operateResult);
 numberBtn.forEach((button) =>
     button.addEventListener("click", () => displayNumber(button.value))
 );
-
+operatorBtn.forEach((button) =>
+    button.addEventListener("click", () => setOperator(button.value))
+);
 
 function displayNumber(num) {
     if (curDisplay.textContent === "0" || shouldReset) {
         resetDisplay();
     }
     curDisplay.textContent += num;
-    if (operatorUsed) shouldReset = true;
 }
 
 function placeDot() {
-    if (curDisplay.textContent.includes('.')) return
+    if (curDisplay.textContent.includes(".")) return;
     if (curDisplay.textContent.length <= 0) {
-        curDisplay.textContent = '0';
+        curDisplay.textContent = "0";
     }
-    curDisplay.textContent += '.';
+    curDisplay.textContent += ".";
 }
 
 function resetDisplay() {
@@ -57,28 +59,48 @@ function clearDisplay() {
 
 function deleteNumber() {
     let num = curDisplay.textContent;
-    if (showingResult || num === '0') return;
+    if (num === 'NaN') {
+        clearDisplay();
+        return;
+    }
+    if (showingResult || num === "0") return;
     curDisplay.textContent = num.slice(0, -1);
 }
 
-function setOperator(operator){
-    if (curOperator != null) operateResult()
-    if (curDisplay.textContent.length <= 0) return
-    firstOperand = curDisplay.textContent
-    curOperator = operator
-    prevDisplay.textContent = `${firstOperand} ${curOperator}`
+function setOperator(operator) {
+    if (curOperator != null) operateResult();
+    if (curDisplay.textContent.length <= 0) return;
+    firstOperand = curDisplay.textContent;
+    curOperator = operator;
+    prevDisplay.textContent = `${firstOperand} ${curOperator}`;
     shouldReset = true;
     operatorUsed = true;
 }
 
-function operateResult(){
-    if (curOperator == null) return
+function operateResult() {
+    if (curOperator == null) return;
     secondOperand = curDisplay.textContent;
+    if (curOperator === "/" && secondOperand === "0") {
+        alert("Cannot divide by zero!");
+        prevDisplay.textContent = "";
+        curDisplay.textContent = "NaN";
+        return;
+    }
 
+    result = round(calculate(curOperator, firstOperand, secondOperand));
+
+    prevDisplay.textContent = `${firstOperand} ${curOperator} ${secondOperand}`;
+    curDisplay.textContent = result.toString();
+
+    firstOperand = result.toString();
+    secondOperand = "";
+    curOperator = null;
+    showingResult = true;
+    operatorUsed = false;
 }
 
-function round(num){
-    return (num * 1000) / 1000
+function round(num) {
+    return (num * 1000) / 1000;
 }
 
 const add = function (a, b) {
