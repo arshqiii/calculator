@@ -15,6 +15,7 @@ const prevDisplay = document.querySelector(".prev-display");
 const numberBtn = document.querySelectorAll(".numberBtn");
 const operatorBtn = document.querySelectorAll(".operator");
 
+window.addEventListener('keydown', handleKeyboard);
 clear.addEventListener("click", clearDisplay);
 delBtn.addEventListener("click", deleteNumber);
 point.addEventListener("click", placeDot);
@@ -60,7 +61,7 @@ function clearDisplay() {
 
 function deleteNumber() {
     let num = curDisplay.textContent;
-    if (num === 'NaN') {
+    if (num === "NaN") {
         clearDisplay();
         return;
     }
@@ -97,6 +98,15 @@ function operateResult() {
     curOperator = null;
     showingResult = true;
     operatorUsed = false;
+}
+
+function handleKeyboard(e) {
+    if (e.key >= 0 && e.key <= 9) displayNumber(e.key);
+    if (e.key === ".") placeDot();
+    if (e.key === "=" || e.key === "Enter") operateResult();
+    if (e.key === "Backspace") deleteNumber();
+    if (e.key === "Escape") clearDisplay();
+    if (["+", "-", "*", "/", "%"].includes(e.key)) setOperator(e.key);
 }
 
 function round(num) {
