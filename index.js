@@ -1,9 +1,10 @@
 let result = 0;
 let firstOperand = "";
 let secondOperand = "";
-let operator = null;
+let curOperator = null;
 let showingResult = false;
 let shouldReset = false;
+let operatorUsed = false;
 
 const clear = document.querySelector("#clearBtn");
 const delBtn = document.querySelector("#deleteBtn");
@@ -27,6 +28,7 @@ function displayNumber(num) {
         resetDisplay();
     }
     curDisplay.textContent += num;
+    if (operatorUsed) shouldReset = true;
 }
 
 function placeDot() {
@@ -57,6 +59,26 @@ function deleteNumber() {
     let num = curDisplay.textContent;
     if (showingResult || num === '0') return;
     curDisplay.textContent = num.slice(0, -1);
+}
+
+function setOperator(operator){
+    if (curOperator != null) operateResult()
+    if (curDisplay.textContent.length <= 0) return
+    firstOperand = curDisplay.textContent
+    curOperator = operator
+    prevDisplay.textContent = `${firstOperand} ${curOperator}`
+    shouldReset = true;
+    operatorUsed = true;
+}
+
+function operateResult(){
+    if (curOperator == null) return
+    secondOperand = curDisplay.textContent;
+
+}
+
+function round(num){
+    return (num * 1000) / 1000
 }
 
 const add = function (a, b) {
