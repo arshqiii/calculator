@@ -27,6 +27,7 @@ operatorBtn.forEach((button) =>
 );
 
 function displayNumber(num) {
+    if (showingResult) return;
     if (curDisplay.textContent === "0" || shouldReset) {
         resetDisplay();
     }
@@ -81,7 +82,6 @@ function operateResult() {
     if (curOperator == null) return;
     secondOperand = curDisplay.textContent;
     if (curOperator === "/" && secondOperand === "0") {
-        alert("Cannot divide by zero!");
         prevDisplay.textContent = "";
         curDisplay.textContent = "NaN";
         return;
