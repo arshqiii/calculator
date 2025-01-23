@@ -6,6 +6,7 @@ let showingResult = false;
 let shouldReset = false;
 
 const clear = document.querySelector("#clearBtn");
+const delBtn = document.querySelector("#deleteBtn");
 const equal = document.querySelector("#equalBtn");
 const point = document.querySelector("#pointBtn");
 const curDisplay = document.querySelector(".cur-display");
@@ -18,6 +19,7 @@ numberBtn.forEach((button) =>
 );
 
 clear.addEventListener("click", clearDisplay);
+delBtn.addEventListener("click", deleteNumber);
 
 function displayNumber(num) {
     if (curDisplay.textContent === "0" || shouldReset) {
@@ -40,6 +42,12 @@ function clearDisplay() {
     showingResult = false;
     shouldReset = false;
     operator = null;
+}
+
+function deleteNumber(){
+    if (showingResult) return
+    let num = curDisplay.textContent
+    curDisplay.textContent = num.slice(0,-1)
 }
 
 const add = function (a, b) {
