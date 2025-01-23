@@ -28,7 +28,13 @@ operatorBtn.forEach((button) =>
 );
 
 function displayNumber(num) {
-    if (showingResult) return;
+    if (showingResult) {
+        prevDisplay.textContent = curDisplay.textContent
+        if (operatorUsed) {
+            prevDisplay.textContent = `${firstOperand} ${curOperator}`;
+        }
+        curDisplay.textContent = ''
+    }
     if (curDisplay.textContent === "0" || shouldReset) {
         resetDisplay();
     }
