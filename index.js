@@ -16,6 +16,7 @@ const operatorBtn = document.querySelectorAll(".operator");
 
 clear.addEventListener("click", clearDisplay);
 delBtn.addEventListener("click", deleteNumber);
+point.addEventListener('click', placeDot)
 numberBtn.forEach((button) =>
     button.addEventListener("click", () => displayNumber(button.value))
 );
@@ -26,6 +27,14 @@ function displayNumber(num) {
         resetDisplay();
     }
     curDisplay.textContent += num;
+}
+
+function placeDot() {
+    if (curDisplay.textContent.includes('.')) return
+    if (curDisplay.textContent.length <= 0) {
+        curDisplay.textContent = '0';
+    }
+    curDisplay.textContent += '.';
 }
 
 function resetDisplay() {
